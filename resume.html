@@ -1,1 +1,163 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - My GIS Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #2d3748;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.8);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #63b3ed;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0;
+      color: #63b3ed;
+    }
+
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Vertical line */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #63b3ed;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    /* Timeline item */
+    .timeline-item {
+      padding: 20px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    /* Circles on the line */
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: #2d3748;
+      border: 3px solid #63b3ed;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Left side */
+    .left {
+      left: 0;
+    }
+
+    /* Right side */
+    .right {
+      left: 50%;
+    }
+
+    /* Content box */
+    .content {
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 10px;
+    }
+
+    /* Adjust circles for right side */
+    .right::after {
+      left: -10px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 25px;
+      }
+
+      .timeline-item::after {
+        left: 15px;
+      }
+
+      .right {
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="resume.html">Resume</a>
+    <a href="portfolio.html">Portfolio</a>
+  </nav>
+
+  <h1>Professional Experience</h1>
+
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="content">
+        <h2>2023 – GIS Intern</h2>
+        <p>City Planning Office</p>
+        <p>• Conducted spatial analysis for urban land use planning.<br>
+        • Created interactive maps using ArcGIS Online.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content">
+        <h2>2022 – Research Assistant</h2>
+        <p>Remote Sensing Lab, University</p>
+        <p>• Processed Sentinel-2 imagery for land cover classification with AI.<br>
+        • Published results in a scientific report.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="content">
+        <h2>2020 – Teaching Assistant</h2>
+        <p>Geography Department</p>
+        <p>• Assisted in GIS lab sessions.<br>
+        • Helped students with spatial data projects and map design.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
