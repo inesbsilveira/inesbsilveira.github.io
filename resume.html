@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +12,7 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     nav {
@@ -20,30 +20,49 @@
       padding: 1rem;
       text-align: center;
     }
+    
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
+    
     nav a:hover {
       color: #63b3ed;
     }
 
-    h1 {
-      text-align: center;
-      margin: 2rem 0;
-      color: #63b3ed;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    /* Timeline container */
+    .resume-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .resume-header h1 {
+      font-size: 2.5rem;
+      color: #63b3ed;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      color: #63b3ed;
+      border-bottom: 2px solid #63b3ed;
+      padding-bottom: 0.5rem;
+      margin-top: 2.5rem;
+    }
+
+    /* Timeline styling */
     .timeline {
       position: relative;
       max-width: 1000px;
-      margin: auto;
+      margin: 2rem auto;
     }
 
-    /* Vertical line */
     .timeline::after {
       content: '';
       position: absolute;
@@ -55,59 +74,145 @@
       margin-left: -2px;
     }
 
-    /* Timeline item */
     .timeline-item {
-      padding: 20px 40px;
+      padding: 10px 40px;
       position: relative;
-      background-color: inherit;
       width: 50%;
+      box-sizing: border-box;
     }
 
-    /* Circles on the line */
     .timeline-item::after {
       content: '';
       position: absolute;
       width: 20px;
       height: 20px;
-      right: -10px;
       background-color: #2d3748;
       border: 3px solid #63b3ed;
-      top: 15px;
       border-radius: 50%;
+      top: 15px;
       z-index: 1;
     }
 
-    /* Left side */
     .left {
       left: 0;
     }
 
-    /* Right side */
     .right {
       left: 50%;
     }
 
-    /* Content box */
-    .content {
-      padding: 20px;
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 10px;
+    .left::after {
+      right: -10px;
     }
 
-    /* Adjust circles for right side */
     .right::after {
       left: -10px;
     }
 
-    /* Responsive */
+    .content {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .content h2 {
+      margin-top: 0;
+      color: #63b3ed;
+    }
+
+    .content h3 {
+      margin: 0.5rem 0;
+      color: #cbd5e0;
+    }
+
+    .content p {
+      margin: 0.5rem 0;
+    }
+
+    .content ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .content li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Education section styling */
+    .education-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .education-item {
+      flex: 1 1 45%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      min-width: 300px;
+    }
+
+    .education-item h3 {
+      color: #63b3ed;
+      margin-top: 0;
+    }
+
+    .education-date {
+      color: #cbd5e0;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* Awards section */
+    .awards-list {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 2rem 0;
+    }
+
+    .awards-list ul {
+      padding-left: 1.2rem;
+    }
+
+    .awards-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    /* Download button */
+    .download-btn {
+      display: block;
+      width: 200px;
+      margin: 2rem auto;
+      padding: 0.8rem 1.5rem;
+      background-color: #63b3ed;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #4299e1;
+    }
+
+    /* Responsive design */
     @media screen and (max-width: 768px) {
       .timeline::after {
-        left: 20px;
+        left: 31px;
       }
 
       .timeline-item {
         width: 100%;
-        padding-left: 60px;
+        padding-left: 70px;
         padding-right: 25px;
       }
 
@@ -117,6 +222,10 @@
 
       .right {
         left: 0%;
+      }
+
+      .education-item {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -129,43 +238,84 @@
     <a href="portfolio.html">Portfolio</a>
   </nav>
 
-  <h1>Professional Experience</h1>
+  <div class="container">
+    <div class="resume-header">
+      <h1>RESUME</h1>
+    </div>
 
-  <div class="timeline">
-    <div class="timeline-item left">
-      <div class="content">
-        <h2>2025 - present Geospatial Analyst & Data Scientist</h2>
-        <p>hummingbirds</p>
-        <p>• C<br>
-        • C</p>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Physical Climate Risk Research Assistant</h2>
+          <h3>Woodwell Climate Research Center</h3>
+          <p class="date-range">Nov 2023 - Present</p>
+          <ul>
+            <li>Process, analyze, and visualize geospatial data</li>
+            <li>Assess physical climate risks</li>
+            <li>Develop models for climate impact assessment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="content">
+          <h2>NASA REVELAR Material Base via Editor</h2>
+          <h3>Science Systems and Applications Inc. (SSAI) / Analytical Mechanics Associates (AMA)</h3>
+          <p class="date-range">Jan 2022 - Nov 2023</p>
+          <ul>
+            <li>Worked with satellite imagery for conservation of large animals</li>
+            <li>Provided statistical results and analysis</li>
+            <li>Processed and interpreted remote sensing data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Naturalist</h2>
+          <h3>Seacoast Science Center</h3>
+          <p class="date-range">May 2018 – Aug 2018</p>
+          <ul>
+            <li>Educated 10-30 K-12 students per tour on environmental science</li>
+            <li>Presented educational materials and engaged student inquiry</li>
+            <li>Explored the local, rocky intertidal zone with students</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="timeline-item right">
-      <div class="content">
-        <h2>2023 - 2024 Data Science Research Fellow</h2>
-        <p>Instituto Superior de Agronomia, Universidade de Lisboa</p>
-        <p>• P<br>
-        • P</p>
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-container">
+      <div class="education-item">
+        <h3>Master of Science in Geographic Information Science</h3>
+        <p class="education-date">May 2020 - June 2021</p>
+        <p><strong>Clark University, Worcester, MA</strong></p>
+        <p>Specialized in geospatial analysis and remote sensing applications</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Bachelor of Arts in Environmental Science</h3>
+        <p class="education-date">September 2016 - May 2020</p>
+        <p><strong>Clark University, Worcester, MA</strong></p>
+        <p>Focus on conservation science and ecological systems</p>
       </div>
     </div>
 
-    <div class="timeline-item left">
-      <div class="content">
-        <h2>2022 - 2024 – Environmental Engineer</h2>
-        <p>AHSA - Associação de Horticultores do Sudoeste Alentejano</p>
-        <p>• A<br>
-        • H</p>
-      </div>
+    <h2 class="section-title">Awards and Honors</h2>
 
-          <div class="timeline-item left">
-      <div class="content">
-        <h2>2021 - 2022 – Environmental Engineer Trainee</h2>
-        <p>AHSA - Associação de Horticultores do Sudoeste Alentejano</p>
-        <p>• A<br>
-        • H</p>
-      </div>
+    <div class="awards-list">
+      <ul>
+        <li><strong>summa cum laude</strong> - Academic distinction for exceptional grades</li>
+        <li><strong>High Honors in Environmental Science</strong> - Recognition for excellence in major field</li>
+        <li><strong>Dean's List all semesters</strong> - Consistent academic achievement</li>
+        <li><strong>Co-received Summer 2021 NASA DEVELOPer of the Term</strong> - Recognition for outstanding contribution to NASA DEVELOP program</li>
+      </ul>
     </div>
+
+    <a href="#" class="download-btn">Download Resume - PDF</a>
   </div>
 </body>
 </html>
